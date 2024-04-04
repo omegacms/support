@@ -1,0 +1,42 @@
+{
+  "name": "omegacms/support",
+  "type": "package",
+  "description": "Omega CMS Support Package",
+  "keywords": [
+    "omegacms",
+    "framework",
+    "support"
+  ],
+  "homepage": "https://omegacms.github.io",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Adriano Giovannini",
+      "email": "omegacms@outlook.com",
+      "homepage": "https://omegacms.github.io",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "omegacms/testing": "^1.0.0",
+    "phpunit/phpunit": "^9.5",
+    "symfony/process": "^5.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Omega\\Support\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Omega\\Support\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
+  "minimum-stability": "stable"
+}
