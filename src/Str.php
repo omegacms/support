@@ -238,7 +238,7 @@ class Str
     /**
      * Returns the language specific replacements for the ascii method.
      * 
-     * @param  string $language Holds the languagte specific replacements.
+     * @param  string $language Holds the language specific replacements.
      * @return ?array Return an array of specific replacements or null.
      */
     protected static function languageSpecificCharsArray( string $language ) : ?array 
