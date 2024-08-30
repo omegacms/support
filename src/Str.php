@@ -323,4 +323,41 @@ class Str
 
         return false;
     }
+
+    /**
+     * Returns the length of a string using mb_strlen if available,
+     * otherwise falls back to strlen.
+     *
+     * @param string $string The string to measure.
+     * @param string $encoding The character encoding, default is 'UTF-8'.
+     * @return int The length of the string.
+     */
+    public static function strlen(string $string, string $encoding = 'UTF-8'): int
+    {
+        // Check if mb_strlen function exists and is available
+        if (function_exists('mb_strlen')) {
+            return mb_strlen($string, $encoding);
+        }
+        
+        // Fallback to strlen if mb_strlen is not available
+        return strlen($string);
+    }
+
+        /**
+     * Controlla se una stringa contiene un'altra stringa.
+     *
+     * @param string $haystack La stringa da cercare.
+     * @param string $needle   La sottostringa da cercare.
+     * @return bool Restituisce true se la sottostringa è trovata, false altrimenti.
+     */
+    public static function strContains(string $haystack, string $needle): bool
+    {
+        // Verifica se la funzione str_contains è disponibile
+        if (function_exists('str_contains')) {
+            return str_contains($haystack, $needle);
+        }
+
+        // Altrimenti usa strpos come fallback
+        return strpos($haystack, $needle) !== false;
+    }
 }

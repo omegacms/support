@@ -51,7 +51,7 @@ class Arr
      * in a single value.
      * 
      * @param  mixed $value Holds the value to check.
-     * @return array Return the wrapped array.
+     * @return array<mixed> Return the wrapped array.
      */
     public static function wrap( mixed $value ) : array
     {
