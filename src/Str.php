@@ -4,7 +4,7 @@
  *
  * @link       https://omegacms.github.io
  * @author     Adriano Giovannini <omegacms@outlook.com>
- * @copyright  Copyright (c) 2022 Adriano Giovanni. (https://omegacms.github.io)
+ * @copyright  Copyright (c) 2024 Adriano Giovanni. (https://omegacms.github.io)
  * @license    https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  */
 
@@ -21,13 +21,18 @@ namespace Omega\Support;
 /**
  * @use
  */
+use function function_exists;
 use function is_null;
 use function mb_strtolower;
+use function mb_strlen;
 use function preg_match;
 use function preg_quote;
 use function preg_replace;
+use function str_contains;
 use function str_replace;
 use function strlen;
+use function substr;
+use function trim;
 
 /**
  * Str class.
@@ -44,7 +49,7 @@ use function strlen;
  * @package     Omega\Support
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
- * @copyright   Copyright (c) 2022 Adriano Giovanni. (https://omegacms.github.io)
+ * @copyright   Copyright (c) 2024 Adriano Giovanni. (https://omegacms.github.io)
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html     GPL V3.0+
  * @version     1.0.0
  */
@@ -328,36 +333,32 @@ class Str
      * Returns the length of a string using mb_strlen if available,
      * otherwise falls back to strlen.
      *
-     * @param string $string The string to measure.
-     * @param string $encoding The character encoding, default is 'UTF-8'.
+     * @param  string $string The string to measure.
+     * @param  string $encoding The character encoding, default is 'UTF-8'.
      * @return int The length of the string.
      */
-    public static function strlen(string $string, string $encoding = 'UTF-8'): int
+    public static function strlen( string $string, string $encoding = 'UTF-8' ) : int
     {
-        // Check if mb_strlen function exists and is available
-        if (function_exists('mb_strlen')) {
-            return mb_strlen($string, $encoding);
+        if ( function_exists( 'mb_strlen' ) ) {
+            return mb_strlen( $string, $encoding );
         }
         
-        // Fallback to strlen if mb_strlen is not available
-        return strlen($string);
+        return strlen( $string );
     }
 
-        /**
-     * Controlla se una stringa contiene un'altra stringa.
+    /**
+     * Checks if a string contains another string.
      *
-     * @param string $haystack La stringa da cercare.
-     * @param string $needle   La sottostringa da cercare.
-     * @return bool Restituisce true se la sottostringa è trovata, false altrimenti.
+     * @param  string $haystack The string to search in.
+     * @param  string $needle   The substring to search for.
+     * @return bool Returns true if the substring is found, false otherwise.
      */
-    public static function strContains(string $haystack, string $needle): bool
+    public static function strContains( string $haystack, string $needle ) : bool
     {
-        // Verifica se la funzione str_contains è disponibile
-        if (function_exists('str_contains')) {
-            return str_contains($haystack, $needle);
+        if ( function_exists( 'str_contains' ) ) {
+            return str_contains( $haystack, $needle );
         }
 
-        // Altrimenti usa strpos come fallback
-        return strpos($haystack, $needle) !== false;
+        return str_contains( $haystack, $needle );
     }
 }
