@@ -23,7 +23,7 @@
   },
   "require-dev": {
     "omegacms/testing": "^1.0.0",
-    "phpunit/phpunit": "^11.3",
+    "phpunit/phpunit": "^9.5",
     "phpstan/phpstan": "^1.12"
   },
   "autoload": {
