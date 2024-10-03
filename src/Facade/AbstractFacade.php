@@ -22,7 +22,7 @@ namespace Omega\Support\Facade;
  * @use
  */
 use Omega\Application\Application;
-use RuntimeException;
+use Omega\Support\Facade\Exception\FacadeObjectNotFoundException;
 
 /**
  * Facade class.
@@ -76,8 +76,8 @@ abstract class AbstractFacade implements FacadeInterface
         $instance = static::resolveFacadeInstance();
 
         if ( ! $instance ) {
-            throw new RuntimeException(
-                'A facade root has not been set.'
+            throw new FacadeObjectNotSetException(
+                static::class
             );
         }
 
