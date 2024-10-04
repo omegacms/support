@@ -37,7 +37,7 @@ use function is_null;
  * and overall code organization.
  * 
  * @category    Omega
- * @package     Omega\Support
+ * @package     Support
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovanni. (https://omegacms.github.io)

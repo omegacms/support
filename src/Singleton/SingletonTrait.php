@@ -22,7 +22,7 @@ namespace Omega\Support\Singleton;
  * @use
  */
 use function get_called_class;
-use Omega\Support\Singleton\Exceptions\SingletonException;
+use Omega\Support\Singleton\Exception\SingletonException;
 
 /**
  * Singleton trait.
@@ -33,7 +33,8 @@ use Omega\Support\Singleton\Exceptions\SingletonException;
  * subsequent  instantiations  to  return the  same  instance.
  *
  * @category    Omega
- * @package     Omega\Application
+ * @package     Support
+ * @subpackage  Singleton
  * @link        https://omegacms.github.io
  * @author      Adriano Giovannini <omegacms@outlook.com>
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)
