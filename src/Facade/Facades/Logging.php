@@ -44,7 +44,7 @@ use Omega\Support\Facade\AbstractFacade;
  * @copyright   Copyright (c) 2024 Adriano Giovannini. (https://omegacms.github.io)
  * @license     https://www.gnu.org/licenses/gpl-3.0-standalone.html GPL V3.0+
  */
-class Logging extends AbstractFacade
+class Logger extends AbstractFacade
 {
     /**
      * Get the facade accessor.
@@ -56,6 +56,6 @@ class Logging extends AbstractFacade
      */
     public static function getFacadeAccessor() : string
     {
-        return 'logging';
+        return 'logger';
     }
 }
